@@ -1,0 +1,96 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 3</title>
+    <style>
+        body {
+        background-color: #020101;
+        font-family: 'Times New Roman', Times, serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .container{
+        background-color: #53080D;
+        color: #FDF0D5;
+        padding: 10px;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+        border-radius: 15px;
+        }
+        button {
+        background-color: #ceceda;
+        border: none;
+        border-radius: 5px;
+        color: #130d0d;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <h1 id="estacao">Em que estação do ano você está?</h1>
+    <img id="imagem" width="300">
+    <br><br>
+    <button onclick="verificar()">Ver Estação</button>
+
+    <script>
+    function verificar() {
+        let dia = Number(prompt("Digite o dia:"));
+        let mes = Number(prompt("Digite o mês:"));
+
+        let estacao = "";
+        let img = "";
+
+        if ((mes == 12 && dia >= 21) || (mes <= 3 && (mes < 3 || dia <= 20))) {
+            estacao = "Verão";
+            img = "verao.jpg";
+        }
+        else if ((mes == 3 && dia >= 21) || (mes <= 6 && (mes < 6 || dia <= 20))) {
+            estacao = "Outono";
+            img = "outono.jpg";
+        }
+        else if ((mes == 6 && dia >= 21) || (mes <= 9 && (mes < 9 || dia <= 22))) {
+            estacao = "Inverno";
+            img = "inverno.jpg";
+        }
+        else {
+            estacao = "Primavera";
+            img = "primavera.jpg";
+        }
+
+        document.getElementById("imagem").src = img;
+        document.getElementById("estacao").innerHTML = "Estação: " + estacao;
+    }
+    </script>
+
+    <h1 id="resultado">Celsius para Fahrenheit</h1>
+    <button onclick="temp()">Converter</button>
+
+    <script>
+    function temp() {
+        let c = Number(prompt("Digite a temperatura em Celsius:"));
+        let f = (c * 9/5) + 32;
+
+        document.getElementById("resultado").innerHTML =
+            "Celsius: " + c + "°C | Fahrenheit: " + f + "°F";
+
+        if (c >= -5 && c <= 15) {
+            document.body.style.backgroundColor = "#9EB7D6";
+        }
+        else if (c >= 16 && c <= 25) {
+            document.body.style.backgroundColor = "#9FB878";
+        }
+        else if (c >= 26) {
+            document.body.style.backgroundColor = "#BE0B17";
+        }
+    }
+    </script>
+
+</body>
+</html>

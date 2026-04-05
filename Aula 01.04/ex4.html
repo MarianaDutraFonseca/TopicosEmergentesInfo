@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 4</title>
+    <style>
+        body {
+        background-color: #020101;
+        font-family: 'Times New Roman', Times, serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .container{
+        background-color: #53080D;
+        color: #FDF0D5;
+        padding: 10px;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+        border-radius: 15px;
+        }
+        button {
+        background-color: #ceceda;
+        border: none;
+        border-radius: 5px;
+        color: #130d0d;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <h1>Calcule sua Média</h1>
+
+    <button onclick="media()">Calcular</button>
+
+    <script>
+    function media() {
+        let n1 = Number(prompt("Digite a primeira nota:"));
+        let n2 = Number(prompt("Digite a segunda nota:"));
+
+        let media = (n1 + n2) / 2;
+
+        if (media >= 7) {
+            alert("Média: " + media + " - Aprovado");
+        }
+        else if (media >= 1.7 && media < 7) {
+            alert("Média: " + media + " - Recuperação");
+        }
+        else {
+            alert("Média: " + media + " - Reprovado");
+        }
+    }
+    </script>
+
+</body>
+</html>

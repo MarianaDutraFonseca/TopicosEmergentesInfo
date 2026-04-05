@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 1</title>
+    <style>
+        body {
+        background-color: #020101;
+        font-family: 'Times New Roman', Times, serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .container{
+        background-color: #fff9f9;
+        padding: 10px;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+        border-radius: 15px;
+        }
+        button {
+        background-color: #ceceda;
+        border: none;
+        border-radius: 5px;
+        color: #130d0d;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+    <h1 id="texto">Aula 01/04</h1>
+    <p>Esta é uma página interativa. Você pode clicar nos botões abaixo para mudar o texto, alterar a cor de fundo e receber uma mensagem de boas-vindas.</p>
+    
+    <button onclick="mudartexto()">Mudar Texto</button> <button onclick="bemvindo()">Bem-vindo</button>
+    <br><br>
+
+    <button onclick="Azul()">Azul</button>
+    <button onclick="Creme()">Creme</button>
+    <button onclick="Vermelho()">Vermelho</button>
+    </div>
+
+<script>
+    function mudartexto() {
+    document.getElementById("texto").innerHTML = "Viu como o texto muda mesmo?";
+    }
+
+        function Azul() {
+        document.body.style.backgroundColor = "#003049";
+        }
+        function Creme() {
+        document.body.style.backgroundColor = "#E8D9C1";
+        }
+        function Vermelho() {
+        document.body.style.backgroundColor = "#53080D";
+        }
+
+    function bemvindo() {
+    alert("Bem-vindo a página!");
+    }
+</script>
+
+</body>
+</html>

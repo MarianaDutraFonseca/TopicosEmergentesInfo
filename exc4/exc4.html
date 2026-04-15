@@ -1,0 +1,63 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function validar() {
+    let cpf = document.getElementById("cpf").value;
+    let senha = document.getElementById("senha").value;
+    let email = document.getElementById("email").value;
+    let celular = document.getElementById("celular").value;
+
+    let regexCPF = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+    let regexSenha = /^(?=.*[A-Z]).{8,}$/;
+    let regexEmail = /^[^\s@]+@[^\s@]+\.com$/;
+    let regexCelular = /^\d+$/;
+
+    if (!regexCPF.test(cpf)) {
+    alert("CPF Válido!");
+    } else {
+    alert("CPF Inválido!");
+    } 
+    if (!regexSenha.test(senha)) {
+    alert("Senha Válido!");
+    } else {
+    alert("Senha Inválido!");
+    } 
+    if (regexEmail.test(email)){
+    alert("Email válido!");
+    } else {
+    alert("Email inválido!");
+    } 
+    if (!regexCelular.test(celular)) {
+    alert("Celular Válido!");
+    } else {
+    alert("Celular Inválido!");
+    } 
+    }
+</script>
+</head>
+
+<body>
+<div class="inicio">
+<h2>Formulário</h2>
+<p>OBS: A senha deve conter pelo menos 8 caracteres e uma letra maiúscula.</p>
+
+    <form onsubmit="event.preventDefault(); validar();">
+    <label>CPF:</label>
+    <input type="text" id="cpf"><br><br>
+
+    <label>Senha:</label>
+    <input type="text" id="senha"><br><br>
+
+    <label>Email:</label>
+    <input type="text" id="email"><br><br>
+
+    <label>Celular:</label>
+    <input type="text" id="celular"><br><br>
+
+    <button type="submit">Validar</button>
+    </form>
+</div>
+</body>
+</html>
